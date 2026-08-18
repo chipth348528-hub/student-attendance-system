@@ -5,3 +5,5 @@ This folder contains the Data Flow Diagram (DFD) for the Student Attendance Syst
 ## DFD Level 1
 
 The diagram describes how data flows between students, teachers, administrators, system processes, and data stores.
+
+![DFD Level 1 - Student Attendance System](./DFD_Student_Attendance.png)
