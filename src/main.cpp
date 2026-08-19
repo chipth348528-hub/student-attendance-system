@@ -1,88 +1,80 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
+
+#include "Student.h"
+#include "Attendance.h"
+#include "Teacher.h"
+#include "Class.h"
+#include "Subject.h"
 
 using namespace std;
-
-struct Student {
-    string studentId;
-    string fullName;
-    string className;
-};
-
-struct Attendance {
-    string studentId;
-    string date;
-    string status;
-};
 
 vector<Student> students;
 vector<Attendance> attendanceRecords;
 
 void addStudent() {
-    Student s;
+    Student student;
 
-    cout << "Enter student ID: ";
-    cin >> s.studentId;
+    cout << "\nEnter Student ID: ";
+    cin >> student.studentId;
 
     cin.ignore();
-    cout << "Enter full name: ";
-    getline(cin, s.fullName);
+    cout << "Enter Full Name: ";
+    getline(cin, student.fullName);
 
-    cout << "Enter class: ";
-    getline(cin, s.className);
+    cout << "Enter Class Name: ";
+    getline(cin, student.className);
 
-    students.push_back(s);
+    students.push_back(student);
 
-    cout << "Student added successfully.\n";
+    cout << "Student added successfully!\n";
 }
 
-void viewStudents() {
+void showStudents() {
+    cout << "\n===== STUDENT LIST =====\n";
+
     if (students.empty()) {
         cout << "No students found.\n";
         return;
     }
 
-    cout << "\n===== STUDENT LIST =====\n";
-
-    for (const Student& s : students) {
-        cout << "ID: " << s.studentId << endl;
-        cout << "Name: " << s.fullName << endl;
-        cout << "Class: " << s.className << endl;
-        cout << "------------------------\n";
+    for (const Student& student : students) {
+        cout << "ID: " << student.studentId
+             << " | Name: " << student.fullName
+             << " | Class: " << student.className << endl;
     }
 }
 
-void recordAttendance() {
-    Attendance a;
+void markAttendance() {
+    Attendance record;
 
-    cout << "Enter student ID: ";
-    cin >> a.studentId;
+    cout << "\nEnter Student ID: ";
+    cin >> record.studentId;
 
-    cout << "Enter date (DD/MM/YYYY): ";
-    cin >> a.date;
+    cout << "Enter Date (DD/MM/YYYY): ";
+    cin >> record.date;
 
-    cout << "Enter status (Present/Absent/Late): ";
-    cin >> a.status;
+    cout << "Enter Status (Present/Absent/Late): ";
+    cin >> record.status;
 
-    attendanceRecords.push_back(a);
+    attendanceRecords.push_back(record);
 
-    cout << "Attendance recorded successfully.\n";
+    cout << "Attendance recorded successfully!\n";
 }
 
-void viewAttendance() {
+void showAttendance() {
+    cout << "\n===== ATTENDANCE RECORDS =====\n";
+
     if (attendanceRecords.empty()) {
         cout << "No attendance records found.\n";
         return;
     }
 
-    cout << "\n===== ATTENDANCE RECORDS =====\n";
-
-    for (const Attendance& a : attendanceRecords) {
-        cout << "Student ID: " << a.studentId << endl;
-        cout << "Date: " << a.date << endl;
-        cout << "Status: " << a.status << endl;
-        cout << "-----------------------------\n";
+    for (const Attendance& record : attendanceRecords) {
+        cout << "Student ID: " << record.studentId
+             << " | Date: " << record.date
+             << " | Status: " << record.status << endl;
     }
 }
 
@@ -90,10 +82,12 @@ int main() {
     int choice;
 
     do {
-        cout << "\n===== STUDENT ATTENDANCE SYSTEM =====\n";
+        cout << "\n====================================\n";
+        cout << "     STUDENT ATTENDANCE SYSTEM\n";
+        cout << "====================================\n";
         cout << "1. Add Student\n";
         cout << "2. View Students\n";
-        cout << "3. Record Attendance\n";
+        cout << "3. Mark Attendance\n";
         cout << "4. View Attendance Records\n";
         cout << "0. Exit\n";
         cout << "Enter your choice: ";
@@ -105,15 +99,15 @@ int main() {
                 break;
 
             case 2:
-                viewStudents();
+                showStudents();
                 break;
 
             case 3:
-                recordAttendance();
+                markAttendance();
                 break;
 
             case 4:
-                viewAttendance();
+                showAttendance();
                 break;
 
             case 0:
