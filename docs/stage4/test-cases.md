@@ -18,7 +18,7 @@ This document contains test cases for the Student Attendance System.
 | TC10 | View attendance records | Select attendance records | System displays attendance records | Pass |
 | TC11 | View attendance report | Select attendance report | System displays the attendance report | Pass |
 | TC12 | Invalid menu option | Enter an option that does not exist | System displays an error message | Pass |
-|  | Exit system | Select Exit option | System terminates successfully | Pass |
+| TC13 | Exit system | Select Exit option | System terminates successfully | Pass |
 
 ## Testing Result
 
