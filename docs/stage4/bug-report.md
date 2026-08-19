@@ -24,4 +24,4 @@ This document records bugs found during testing and their resolutions.
 
 The identified bugs were documented for further debugging and resolution.
 
-After fixing the bugs, the related test cases were executed again to verify that the system worked correctly.
+The related test cases will be executed again after the bugs are fixed.
