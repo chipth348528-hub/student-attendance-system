@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <limits>
 
 #include "Student.h"
 #include "Attendance.h"
@@ -12,12 +13,13 @@ using namespace std;
 
 vector<Student> students;
 vector<Attendance> attendanceRecords;
-
 void addStudent() {
     Student student;
 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
     cout << "\nEnter Student ID: ";
-    cin >> student.studentId;
+    getline(cin, student.studentId);
 
     if (student.studentId.empty()) {
         cout << "Error: Student ID cannot be empty.\n";
@@ -30,8 +32,6 @@ void addStudent() {
             return;
         }
     }
-
-    cin.ignore();
 
     cout << "Enter Full Name: ";
     getline(cin, student.fullName);
