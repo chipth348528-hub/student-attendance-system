@@ -6,10 +6,10 @@ This document records bugs found during testing and their resolutions.
 
 | Bug ID | Description | Steps to Reproduce | Expected Result | Actual Result | Severity | Status |
 |---|---|---|---|---|---|---|
-| BUG01 | Invalid student ID can be entered | Enter a non-existing student ID when recording attendance | System should reject the ID | System accepts the input | Medium | Identified |
-| BUG02 | Empty student information | Leave student information empty | System should display an error | Empty information may be accepted | Medium | Identified |
-| BUG03 | Invalid menu option | Enter an option outside the menu range | System should display an error message | Invalid option is entered | Low | Identified |
-| BUG04 | Duplicate attendance record | Record attendance for the same student and date twice | System should prevent duplicate records | Duplicate record may be created | Medium | Identified |
+| BUG01 | Invalid student ID can be entered | Enter a non-existing student ID when recording attendance | System should reject the ID | System rejects the non-existing student ID | Medium | Fixed |
+| BUG02 | Empty student information | Leave student information empty | System should display an error | System displays an error message | Medium | Fixed |
+| BUG03 | Invalid menu option | Enter an option outside the menu range | System should display an error message | System displays an error message | Low | Fixed |
+| BUG04 | Duplicate attendance record | Record attendance for the same student and date twice | System should prevent duplicate records | System rejects the duplicate attendance record | Medium | Fixed |
 
 ## Debugging Process
 
@@ -22,6 +22,6 @@ This document records bugs found during testing and their resolutions.
 
 ## Bug Management Result
 
-The identified bugs were documented for further debugging and resolution.
+The identified bugs were documented and fixed during the debugging process.
 
-The related test cases will be executed again after the bugs are fixed.
+After fixing the bugs, the related test cases were executed again to verify that the system worked correctly.
