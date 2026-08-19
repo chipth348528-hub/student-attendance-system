@@ -22,6 +22,6 @@ This document records bugs found during testing and their resolutions.
 
 ## Bug Management Result
 
-The identified bugs were reviewed and fixed during testing.
+The identified bugs were documented for further debugging and resolution.
 
 After fixing the bugs, the related test cases were executed again to verify that the system worked correctly.
